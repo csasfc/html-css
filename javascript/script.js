@@ -162,15 +162,12 @@ document.getElementById('cadastro-form').addEventListener('submit', (event) => {
           break
         }
         case 'data_saida_embarcacao': {
-          // A data sempre está correta pois o input é do tipo date
           break
         }
         case 'data_chegada_embarcacao': {
-          // A data sempre está correta pois o input é do tipo date
           break
         }
         case 'info_embarcacao': {
-          // Não precisa de validação pois é opcional
           break
         }
         default: {
@@ -206,12 +203,10 @@ document.getElementById('cadastro-form').addEventListener('submit', (event) => {
     return
   }
 
-  // Se teve erro, sair do código
   if (teveErro) {
     return
   }
 
-  // Tirando erro caso tenha algum erro posterior
   tirarErro()
 
   // Cadastrando embarcacao
@@ -222,7 +217,6 @@ document.getElementById('cadastro-form').addEventListener('submit', (event) => {
 
 // Função para mudar a tela no clique do botão
 function mudarTela(tela) {
-  // Recebendo as telas
   const listaTela = document.getElementById('lista');
   const cadastroTela = document.getElementById('cadastro');
 
@@ -269,7 +263,6 @@ function mudarTela(tela) {
       // Fazendo o botão ficar selecionado
       toggleBotao('lista')
 
-      // Mostrando listagem
       mostrarListagem()
       break
     }
@@ -281,7 +274,6 @@ function mudarTela(tela) {
         cadastroTela.classList.add('flex')
       }
 
-      // Fazendo o botão ficar selecionado
       toggleBotao('cadastro')
       break
     }
