@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciamento de Embarcações</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside>
+    <h1 class="title">Gerencimento de Embarcações</h1>
+    <button id="botao-lista" onclick="mudarTela('lista')" class="side-button side-button-active">Lista de Viagens Cadastradas</button>
+    <button id="botao-cadastro" onclick="mudarTela('cadastro')" class="side-button">Cadastro de Viagens</button>
+  </aside>
+  <section id="cadastro" class="flex">
+    <form id="cadastro-form">
+      <h1>Cadastro de Viagem de Embarcação</h1>
+      <div class="cadastro-form-field">
+        <label for="nome-embarcacao">Nome da Embarcação</label>
+        <input id="nome-embarcacao" name="nome_embarcacao" class="form-input" />
+      </div>
+      <div class="cadastro-form-field">
+        <label for="saida-embarcacao">Local de saída da Embarcação</label>
+        <input id="saida-embarcacao" name="saida_embarcacao" class="form-input" />
+      </div>
+      <div class="cadastro-form-field">
+        <label for="destino-embarcacao">Destino da Embarcação</label>
+        <input id="destino-embarcacao" name="destino_embarcacao" class="form-input" />
+      </div>
+      <div class="cadastro-form-field">
+        <label for="horario-saida-embarcacao">Horário de saída da Embarcação</label>
+        <input id="horario-saida-embarcacao" name="horario_saida_embarcacao" class="form-input" />
+      </div>
+      <div class="cadastro-form-field">
+        <label for="horario-destino-embarcacao">Horário de chegada da Embarcação</label>
+        <input id="horario-destino-embarcacao" name="horario_destino_embarcacao" class="form-input" />
+      </div>
+      <div class="cadastro-form-field">
+        <label for="data-saida-embarcacao">Data de saida</label>
+        <input type="date" id="data-saida-embarcacao" name="data_saida_embarcacao" class="form-input" />
+      </div>
+      <div class="cadastro-form-field">
+        <label for="data-chegada-embarcacao">Data de chegada</label>
+        <input type="date" id="data-chegada-embarcacao" name="data_chegada_embarcacao" class="form-input" />
+      </div>
+      <div class="cadastro-form-field">
+        <label for="info-embarcacao">Informações adicionais sobre a viagem (opcional)</label>
+        <textarea id="info-embarcacao" name="info_embarcacao" class="form-textarea" placeholder="A viagem começou as 08:30 da manhã do dia 15 de janeiro. O trajeto foi tranquilo até o meio do atlantico norte, onde enfrentamos uma leve tempestade..."></textarea>
+      </div>
+      <span id="form-error"></span>
+      <button type="submit" class="botao-cadastrar">Cadastrar viagem</button>
+    </form>
+  </section>
+  <section id="lista">
+    <input id="input-pesquisa" type="text" placeholder="Atlantida" />
+    <button class="botao-pesquisar" onclick="mostrarListagem()">Pesquisar</button>
+    <p class="filtro-text">Filtro de pesquisa</p>
+    <nav>
+      <button id="button-filtro-nome" class="button-filtro button-filtro-selected" onclick="trocarFiltro('nome')">Nome da embarcação</button>
+      <button id="button-filtro-info" class="button-filtro" onclick="trocarFiltro('info')">Informações adicionais da viagem</button>
+      <button id="button-filtro-saida" class="button-filtro" onclick="trocarFiltro('saida')">Local de saída</button>
+      <button id="button-filtro-destino" class="button-filtro" onclick="trocarFiltro('destino')">Local de Destino</button>
+    </nav>
+    <div id="listagem">
+    </div>
+  </section>
+  <script src="javascript/script.js"></script>
+</body>
+</html>
